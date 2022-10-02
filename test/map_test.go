@@ -22,7 +22,7 @@ func TestMapReturnsArraySameLength(t *testing.T) {
 		t.Run(fmt.Sprintf("case #%d", i), func(t *testing.T) {
 			is := is.New(t)
 			out := fp.Map(test, doNothing)
-			is.Equal(len(out), len(test))
+			is.Equal(out, test)
 		})
 	}
 }
