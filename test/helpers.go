@@ -12,3 +12,7 @@ func startsWith(letter string) func(string) bool {
 		return string(s[0]) == letter
 	}
 }
+
+func sum(i int, j int) int {
+	return i + j
+}
