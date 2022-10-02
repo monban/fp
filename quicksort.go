@@ -2,6 +2,7 @@ package fp
 
 import "golang.org/x/exp/constraints"
 
+// Implements the Quicksort algorythm on a collection of Ordered elements
 func QuickSortSlice[C constraints.Ordered](in []C) []C {
 	if len(in) < 2 {
 		return in

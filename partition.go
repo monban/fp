@@ -1,5 +1,6 @@
 package fp
 
+// PartitionSlice returns two arrays, the first containing elements which satify the predicate, the second containing elements which do not.
 func PartitionSlice[C any](col []C, pred func(C) bool) ([]C, []C) {
 	var a []C
 	var b []C
