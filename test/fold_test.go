@@ -10,6 +10,6 @@ import (
 func TestFold(t *testing.T) {
 	is := is.New(t)
 	foo := []int{1, 2, 3, 4}
-	out := fp.Fold(foo, sum)
+	out := fp.FoldSlice(foo, sum)
 	is.Equal(out, 10)
 }

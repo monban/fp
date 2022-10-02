@@ -21,7 +21,7 @@ func TestMapReturnsArraySameLength(t *testing.T) {
 	for i, test := range tests {
 		t.Run(fmt.Sprintf("case #%d", i), func(t *testing.T) {
 			is := is.New(t)
-			out := fp.Map(test, doNothing)
+			out := fp.MapSlice(test, doNothing)
 			is.Equal(out, test)
 		})
 	}
@@ -37,7 +37,7 @@ func TestMapCallsProcedureForEachElement(t *testing.T) {
 		t.Run(fmt.Sprintf("case #%d", c), func(t *testing.T) {
 			is := is.New(t)
 			var i int
-			fp.Map(testData, func(j int) int {
+			fp.MapSlice(testData, func(j int) int {
 				i++
 				return 0
 			})
@@ -59,7 +59,7 @@ func TestMapAddOne(t *testing.T) {
 	for i, test := range tests {
 		t.Run(fmt.Sprintf("case #%d", i), func(t *testing.T) {
 			is := is.New(t)
-			out := fp.Map(test.i, addOne)
+			out := fp.MapSlice(test.i, addOne)
 			is.Equal(out, test.e)
 		})
 	}
@@ -71,7 +71,7 @@ func TestMapReverseString(t *testing.T) {
 
 	is := is.New(t)
 
-	out := fp.Map(test, reverseString)
+	out := fp.MapSlice(test, reverseString)
 	is.Equal(out, expected)
 }
 

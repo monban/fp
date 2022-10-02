@@ -11,12 +11,12 @@ func TestAllTrue(t *testing.T) {
 	is := is.New(t)
 
 	foo := []int{1, 3, 5}
-	is.Equal(fp.All(foo, isOdd), true)
+	is.Equal(fp.AllSlice(foo, isOdd), true)
 }
 
 func TestAllFalse(t *testing.T) {
 	is := is.New(t)
 
 	foo := []int{1, 4, 5}
-	is.Equal(fp.All(foo, isOdd), false)
+	is.Equal(fp.AllSlice(foo, isOdd), false)
 }

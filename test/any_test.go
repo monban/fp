@@ -10,5 +10,5 @@ import (
 func TestAny(t *testing.T) {
 	is := is.New(t)
 	foo := []int{2, 3, 4}
-	is.Equal(fp.Any(foo, isOdd), true)
+	is.Equal(fp.AnySlice(foo, isOdd), true)
 }

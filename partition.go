@@ -1,6 +1,6 @@
 package fp
 
-func Partition[C any](col []C, pred func(C) bool) ([]C, []C) {
+func PartitionSlice[C any](col []C, pred func(C) bool) ([]C, []C) {
 	var a []C
 	var b []C
 

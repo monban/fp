@@ -2,7 +2,7 @@ package fp
 
 import "golang.org/x/exp/constraints"
 
-func QuickSort[C constraints.Ordered](in []C) []C {
+func QuickSortSlice[C constraints.Ordered](in []C) []C {
 	if len(in) < 2 {
 		return in
 	}
@@ -18,8 +18,8 @@ func QuickSort[C constraints.Ordered](in []C) []C {
 			b = append(b, v)
 		}
 	}
-	a = QuickSort(a)
-	b = QuickSort(b)
+	a = QuickSortSlice(a)
+	b = QuickSortSlice(b)
 	out = append(a, pivot)
 	out = append(out, b...)
 	return out

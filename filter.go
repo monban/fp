@@ -1,6 +1,6 @@
 package fp
 
-func Filter[C any](in []C, pred func(C) bool) []C {
+func FilterSlice[C any](in []C, pred func(C) bool) []C {
 	out := []C{}
 	for _, v := range in {
 		if pred(v) {

@@ -18,7 +18,7 @@ func TestFilterCallsPredicateForEachElement(t *testing.T) {
 		t.Run(fmt.Sprintf("case #%d", c), func(t *testing.T) {
 			is := is.New(t)
 			var i int
-			fp.Filter(testData, func(j int) bool {
+			fp.FilterSlice(testData, func(j int) bool {
 				i++
 				return true
 			})
@@ -36,7 +36,7 @@ func TestFilterReturnsEmptyWhenAllFalse(t *testing.T) {
 	for c, testData := range foo {
 		t.Run(fmt.Sprintf("case #%d", c), func(t *testing.T) {
 			is := is.New(t)
-			out := fp.Filter(testData, func(j int) bool {
+			out := fp.FilterSlice(testData, func(j int) bool {
 				return false
 			})
 			is.Equal(0, len(out))
@@ -53,7 +53,7 @@ func TestFilterSameLengthWhenTrue(t *testing.T) {
 	for c, testData := range foo {
 		t.Run(fmt.Sprintf("case #%d", c), func(t *testing.T) {
 			is := is.New(t)
-			out := fp.Filter(testData, func(j int) bool {
+			out := fp.FilterSlice(testData, func(j int) bool {
 				return true
 			})
 			is.Equal(len(testData), len(out))
@@ -72,7 +72,7 @@ func TestFilterOdd(t *testing.T) {
 	for c, testData := range foo {
 		t.Run(fmt.Sprintf("case #%d", c), func(t *testing.T) {
 			is := is.New(t)
-			out := fp.Filter(testData.in, isOdd)
+			out := fp.FilterSlice(testData.in, isOdd)
 			is.Equal(out, testData.expected)
 		})
 	}
@@ -93,7 +93,7 @@ func TestFilterStringStartsWith(t *testing.T) {
 	for _, testData := range tests {
 		t.Run("case #%d", func(t *testing.T) {
 			is := is.New(t)
-			out := fp.Filter(testData.in, startsWith(testData.letter))
+			out := fp.FilterSlice(testData.in, startsWith(testData.letter))
 			is.Equal(out, testData.expected)
 		})
 	}
