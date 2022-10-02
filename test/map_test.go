@@ -8,12 +8,6 @@ import (
 	"github.com/monban/fp"
 )
 
-// Test case struct
-type tc_int struct {
-	i []int
-	e []int
-}
-
 func TestMapReturnsArraySameLength(t *testing.T) {
 	tests := [][]int{
 		{},
@@ -53,7 +47,10 @@ func TestMapCallsProcedureForEachElement(t *testing.T) {
 }
 
 func TestMapAddOne(t *testing.T) {
-	tests := []tc_int{
+	tests := []struct {
+		i []int
+		e []int
+	}{
 		{[]int{1, 2, 3, 4}, []int{2, 3, 4, 5}},
 		{[]int{-1, -2, -3, -4}, []int{0, -1, -2, -3}},
 		{[]int{100, 2000, 30000, 400000}, []int{101, 2001, 30001, 400001}},
